@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #heading {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <p class="para1">initial text comtent</p>
+    <h5 id="heading" >change baclkgroun co;or</h5>
+    <input type="text"  name="" id="inp1">
+    <input type="text" id="inp2" value="">
+    <p id="inpPara">Text in input field is </p>
+    <img id="pic" src="https://plus.unsplash.com/premium_photo-1676637000058-96549206fe71?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D
+    " alt="">
+
+    <form action="">
+            <input type="text" name="" placeholder="username" id="">
+            <input type="password" placeholder="password">
+            <input type="" name="" id="">
+            <button type="submit" onclick=(e) => {e.preventDefault}</button>>Submit</button>
+    </form>
+    <select id="mySelect">
+        <option value="Option 1">Option 1</option>
+        <option value="Option 2">Option 2</option>
+        <option value="Option 3">Option 3</option>
+    </select>
+    <ul>
+        <li class="lists">first</li>
+        <li class="lists">seconf</li>
+        <li class="lists">thrd</li>
+        <li class="lists">fourts</li>
+    </ul>
+    <p id="selectedOption">Selected option will be displayed here.</p>
+    <script>
+        let p1 = document.querySelector('.para1')
+        p1.addEventListener("click",() => {
+            p1.textContent = 'Final text content of para'
+        })
+        let img1 = document.getElementById("pic")
+        img1.addEventListener("dblclick",() => {
+            if(img1.style.opacity == 1){
+                img1.style.opacity = 0.5
+            } else {img1.style.opacity = 1}
+        })
+        let h5 = document.getElementById("heading")
+        h5.addEventListener("mouseover",() => {
+            if(h5.style.backgroundColor == "aqua"){
+                h5.style.backgroundColor = "red"
+            } else {h5.style.backgroundColor = "aqua"}
+        })
+        let input1 = document.getElementById('inp1')
+        input1.addEventListener("keydown",(e) => {
+            console.log(e.key)
+        })
+        let input2 = document.getElementById("inp2")
+        let para2 = document.getElementById("inpPara")
+
+        input2.addEventListener("keyup",(e) => {
+            para2.innerHTML = `Text in input field is ${e.target.value}`
+
+            var select = document.getElementById("mySelect");
+        var paragraph = document.getElementById("selectedOption");
+        select.addEventListener("change",() => {
+            paragraph.textContent = "Selected O[tion]" + select.value
+        })
+        })
+        let list = document.querySelectorAll(".lists")
+       list.addEventListener("click",() => {
+        console.log(list.textContent)
+       })
+
+
+
+        
+
+    </script>
+</body>
+</html>
